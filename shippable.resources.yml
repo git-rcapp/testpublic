@@ -3,7 +3,7 @@ resources:
     type: gitRepo
     integration: github
     pointer:
-      sourceName: bell-rc/testpublic
+      sourceName: git-rcapp/testpublic
       branch: master
       buildOnPullRequest: true  
       buildOnRelease: true               
