@@ -3,9 +3,7 @@ language: node_js
 
 # Version number
 node_js:
- # - 0.10
-  - 0.11
-  - 0.12
+  - 8.1
     
 env:
   global:
@@ -23,19 +21,19 @@ env:
 #Uncomment below section to disable the private submodules
 git:
    submodules: false
-build:
- 
-  ci:
    
+build: 
+  ci:
     - node --version
     - lsb_release -a
     - docker --version
     - docker info
     - docker ps
    #- sleep 1m
+   
 integrations:    
   notifications:
-    - integrationName: notify-slack 
+    - integrationName: slack 
       type: slack
       recipients:
         - "#random" 
@@ -58,7 +56,7 @@ integrations:
       on_failure: always 
       on_cancel: always
       
-    - integrationName: notify-hipchat
+    - integrationName: hipchat
       type: hipchat
       recipients: 
         - '#rc-private'
@@ -68,22 +66,4 @@ integrations:
       on_success: always   
       on_failure: always
       on_cancel: always 
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
       
